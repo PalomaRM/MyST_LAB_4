@@ -1,9 +1,9 @@
 # MyST_Lab3
-Microestructuras y Sistemas de Trading: Laboratorio 3
+Microestructuras y Sistemas de Trading: Laboratorio 4
 
 
 ## Description
-For this project is to create tools in order to analyze the performance of the trading excersize that was completed for the LAB 2.
+En este laboratorio usaremos información del Libro de Ordenes de Criptomonedas de diversos exchanges internacionales, con el objetivo primario de visualizar y modelar la microestructura del mercado por medio del comportamiento de Libro de Ordenes y sus caracteristicas como; Matching Engine, Levels, Ask-Bid Volumnes, etc. 
 
 ## Install dependencies
 
@@ -20,9 +20,7 @@ Through statistical analysis and performance measurements, this lab will examine
 ## Author
 Financial Engineering students from the university of ITESO.
 Paloma Rodriguez Medel
-Fernando Guerra Muro
-Andrea Flores Fernandez
-Tania Bell Nicholls
+Galilea de la Torre Rojas
 
 ## License
 **GNU General Public License v3.0** 
