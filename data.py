@@ -89,6 +89,6 @@ if __name__ == "__main__":
      data1 = [item for sublist in data1 for item in sublist]
      data1 = pd.DataFrame(data1)
 
-data1.to_csv('files/ETHUSDT.csv')
+#data1.to_csv('files/ETHUSDT.csv')
 #data1.to_csv('files/BTCUSDT.csv')
 
