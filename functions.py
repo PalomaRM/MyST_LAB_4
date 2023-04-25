@@ -62,7 +62,7 @@ if __name__ == "__main__":
      run_time = 3600 # seconds
      symbol1 = "BTC/USDT"
 
-     data1 = asyncio.run(multi_orderbooks(exchanges, run_time=run_time, symbol=symbol))
+     data1 = asyncio.run(multi_orderbooks(exchanges, run_time=run_time, symbol=symbol1))
      data1 = [item for sublist in data for item in sublist]
      data1 = pd.DataFrame(data)
 
@@ -73,7 +73,7 @@ if __name__ == "__main__":
      run_time = 3600 # seconds
      symbol2 = "ADA/USDT"
 
-     data2 = asyncio.run(multi_orderbooks(exchanges, run_time=run_time, symbol=symbol))
+     data2 = asyncio.run(multi_orderbooks(exchanges, run_time=run_time, symbol=symbol2))
      data2 = [item for sublist in data for item in sublist]
      data2 = pd.DataFrame(data)
 
