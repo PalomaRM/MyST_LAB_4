@@ -82,12 +82,14 @@ async def multi_orderbooks(exchanges, run_time: int, symbol: str):
 
 if __name__ == "__main__":
      exchanges = ["bigone", "blockchaincom","bitso"]
+     #exchanges = ["bigone", "blockchaincom", "bitforex"]
      run_time = 3600 # seconds
      symbol1 = "BTC/USDT"
+     #symbol1 = "ETH/USDT"
 
      data1 = asyncio.get_event_loop().run_until_complete(multi_orderbooks(exchanges, run_time=run_time, symbol=symbol1))
      data1 = [item for sublist in data1 for item in sublist]
      data1 = pd.DataFrame(data1)
 
 data1.to_csv('files/BTCUSDT.csv')
-
+#data1.to_csv('files/ETHUSDT.csv')
