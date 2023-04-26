@@ -9,4 +9,6 @@ eth=pd.read_csv("files/ETHUSDT.csv", usecols=['exchange','datetime','levels','as
 
 df_btc = fn.effectivespread(btc)
 df_eth = fn.effectivespread(eth)
-print(df_eth)
+#print(df_eth)
+
+
