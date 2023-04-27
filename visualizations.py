@@ -1,16 +1,19 @@
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import pandas as pd
 
-btc=pd.read_csv("files/BTCUSDT.csv")
-eth=pd.read_csv("files/ETHUSDT.csv")
+def visualize_data(df, column_name):
+    exchanges = df["exchange"].unique().tolist()
 
-exchanges = btc["exchange"].unique().tolist()
+    fig = go.Figure(layout=dict(title=dict(text=f"{column_name.capitalize()}")))
 
-fig = go.Figure()
-for exchange in exchanges:
-    exchange_df = btc[btc["exchange"] == exchange]
-    fig.add_trace(go.Scatter(x=exchange_df["datetime"], y=exchange_df["mid_price"], name=exchange))
+    for exchange in exchanges:
+        exchange_df = df[df["exchange"] == exchange].copy()  # Make a copy of the slice
+        exchange_df["datetime"] = pd.to_datetime(exchange_df["datetime"])  # Convert datetime column to datetime type
+        fig.add_trace(go.Scatter(x=exchange_df["datetime"], y=exchange_df[column_name], name=exchange))
+    fig.update_xaxes(title_text="Datetime", title_standoff=25)
+    fig.update_yaxes(title_text=column_name.capitalize(), title_standoff=25)
 
-fig.update_layout(title=f"BTC/EUR Mid Price for all Exchanges", xaxis_title="Datetime", yaxis_title="Mid Price")
-fig.show()
+    for i, exchange in enumerate(exchanges):
+        fig.add_annotation(dict(text=exchange, xref="paper", yref="paper", x=0.05, y=1.1-(i*0.1), showarrow=False))
+
+    fig.show()
